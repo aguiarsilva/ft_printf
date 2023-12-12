@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:05 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/11 15:04:59 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:44:20 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,10 @@ int       ft_putstr_s(char *s)
     return (i);
 }
 
+int       ft_putint_d_i(int num)
+{
+    int i;
+
+    i = 0;
+    if ()
+}
