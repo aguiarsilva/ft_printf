@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:05 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/12 14:44:20 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/12 23:06:34 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,13 @@ int       ft_putint_d_i(int num)
     int i;
 
     i = 0;
-    if ()
+    if (num < -9 || num > 9)    
+      i += ft_putint_d_i(num / 10);
+    else if (num < 0)
+      i += ft_putchar_c('-');
+    if (num < 0)
+      i += ft_putchar_c((num % 10 * -1) + '0');
+    else if (num >= 0)
+      i += ft_putchar_c(num % 10 + '0');
+  return (i);
 }
