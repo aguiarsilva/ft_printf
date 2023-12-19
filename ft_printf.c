@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:36:52 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/19 23:23:09 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/19 23:56:47 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ int ft_printf(const char *format, ...)
 {
   va_list ap;
   int     i;
-  int     out_len;
 
   va_start(ap, format);
   i = 0;
-  while(*format)
+  while(*format != '\0')
   {
     if (*format != '%')
       i += ft_putchar_c(*format);
@@ -37,4 +36,5 @@ int ft_printf(const char *format, ...)
     i++;
   }
   va_end(ap);
+  return (i);
 }
