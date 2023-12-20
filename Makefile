@@ -6,7 +6,7 @@
 #    By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/09 14:20:13 by baguiar-          #+#    #+#              #
-#    Updated: 2023/12/20 09:37:05 by baguiar-         ###   ########.fr        #
+#    Updated: 2023/12/20 12:12:15 by baguiar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,28 +18,38 @@ CCFLAGS := -Wextra -Werror -Wall -I.
 
 SRCS = 
 
+SUBDIR = libft
+
+SUBOBJ = libft/libft.a
+
 OBJ := ${SRCS:.c=.o}
 
 ARCS = ar -rc
 
 RM = rm -rf
 
-all: $(NAME)
-
-$(OBJ)
-		$(CC) -c $(CCFLAGS) $(SRCS)
+all: ${SUBDIR} $(NAME)
 
 $(NAME): $(OBJ)
+	cp ${SUBOBJ} ./${NAME}
 	$(ARCS) $(NAME) $(OBJ)
+
+$(OBJ)
+		$(CC) -c $(CCFLAGS) ${SRCS}
+
+${SUBDIR}:
+	cd ${SUBDIR} && ${MAKE}
 
 clean:
 	$(RM) $(OBJ)
+	cd ${SUBDIR} && ${MAKE} clean
 
 fclean: clean
-	$(RM) $(NAME)
+	${RM} ${NAME}
+	cd ${SUBDIR} && ${MAKE} fclean
 
 re: fclean all
 
-.PHONY: clean re fclean all
+.PHONY: clean re fclean all ${SUBDIR}
 
 

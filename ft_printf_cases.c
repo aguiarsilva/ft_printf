@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:05 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/20 08:43:18 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:01:18 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,20 +80,3 @@ int ft_putunint_u(unsigned int u)
   i += ft_putchar_c(u % 10 + '0');
   return (i);
 }
-
-int ft_hex_l(unsigned int num)
-{
-  int i;
-
-  i = 0;
-  if (num > 15)
-    i += ft_hex_l(num / 16);
-  num %= 16;
-  if (num < 10)
-    i += ft_putchar_c((num - 10) + 'a');
-  else
-    i += ft_putchar_c((num - 10) + 'A'); 
-  return (i);
-}
-
-int ft_putptr()
