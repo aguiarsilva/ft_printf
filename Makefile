@@ -6,7 +6,7 @@
 #    By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/09 14:20:13 by baguiar-          #+#    #+#              #
-#    Updated: 2023/12/09 14:35:51 by baguiar-         ###   ########.fr        #
+#    Updated: 2023/12/20 09:37:05 by baguiar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,16 @@ CCFLAGS := -Wextra -Werror -Wall -I.
 
 SRCS = 
 
-SDIR = libft
+OBJ := ${SRCS:.c=.o}
 
-SOBJ = libft/libft.a
+ARCS = ar -rc
 
-OBJ := $(SRCS:%.c=%.o)
-
-ARCS = ar rcs
-
-RM = rm -f
+RM = rm -rf
 
 all: $(NAME)
 
-%.o : %.c
-		$(CC) $(CCFLAGS) -c $< -o $@
+$(OBJ)
+		$(CC) -c $(CCFLAGS) $(SRCS)
 
 $(NAME): $(OBJ)
 	$(ARCS) $(NAME) $(OBJ)
