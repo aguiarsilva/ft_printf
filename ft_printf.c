@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:36:52 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/20 07:48:32 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/20 08:31:31 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,18 @@ static int ft_fmt(char fmt, va_list ap)
       out_len += ft_putchar_c(va_arg(ap, int));
   else if (fmt == 's')
       out_len += ft_putstr_s(va_arg(ap, char *));
-  else if (fmt == 'd')
+  else if (fmt == 'd' || fmt == 'i')
       out_len += ft_putint_d_i((long)va_arg(ap, int));
   else if (fmt == 'x')
-      out_len += 1; 
+      out_len += 1;
+  //else if (fmt == 'X')
+    //out_len += 
+  else if (fmt == 'u')
+      out_len += ft_putuint_u(va_arg(ap, unsigned int));
+  //else if (fmt == 'p')
+    //out_len +=
+  else
+      out_len += write(1, &fmt, 1);
   return (out_len);
 }
 

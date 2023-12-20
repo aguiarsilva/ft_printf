@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:05 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/17 23:55:55 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/20 08:29:53 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,26 @@ int       ft_putstr_s(char *s)
     }
     return (i);
 }
+
+/* int ft_putdigit(long n, int base)
+{
+  int dig_len;
+  char  *sym;
+
+  sym = "0123456789abcdef";
+  if(n < 0)
+  {
+    write(1, '-', 1);
+    return (ft_putdigit(-n, base) + 1);
+  }
+  else if (n < base)
+    return (ft_putchar_c(sym[n]));
+  else
+  {
+    dig_len = ft_putdigit(n / base, base);
+    return (count + ft_putdigit(n % base, base));
+  }
+} */
 
 int       ft_putint_d_i(int num)
 {
