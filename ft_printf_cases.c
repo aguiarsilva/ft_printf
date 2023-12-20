@@ -6,7 +6,7 @@
 /*   By: baguiar- <baguiar-@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:13:05 by baguiar-          #+#    #+#             */
-/*   Updated: 2023/12/20 08:29:53 by baguiar-         ###   ########.fr       */
+/*   Updated: 2023/12/20 08:43:18 by baguiar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,3 +95,5 @@ int ft_hex_l(unsigned int num)
     i += ft_putchar_c((num - 10) + 'A'); 
   return (i);
 }
+
+int ft_putptr()
