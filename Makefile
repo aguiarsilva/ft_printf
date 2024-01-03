@@ -14,27 +14,30 @@ NAME := libftprintf.a
 
 CC := cc
 
-CCFLAGS := -Wextra -Werror -Wall -I.
+CCFLAGS := -Wextra -Werror -Wall
 
-SRCS = 
-
+SRCS := ft_printf.c \
+		ft_printf_cases.c \
+		ft_printf_ptr.c \
+		ft_printf_x.c
+		
 SUBDIR = libft
 
 SUBOBJ = libft/libft.a
 
 OBJ := ${SRCS:.c=.o}
 
-ARCS = ar -rc
+ARCS := ar -rc
 
-RM = rm -rf
+RM := rm -rf
 
 all: ${SUBDIR} $(NAME)
 
 $(NAME): $(OBJ)
 	cp ${SUBOBJ} ./${NAME}
-	$(ARCS) $(NAME) $(OBJ)
+	${ARCS} ${NAME} ${OBJ}
 
-$(OBJ)
+$(OBJ):
 		$(CC) -c $(CCFLAGS) ${SRCS}
 
 ${SUBDIR}:

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#inlcude "ft_printf.h"
+#include "ft_printf.h"
 
 static int	ft_hexlen(unsigned int num)
 {
@@ -25,7 +25,7 @@ static int	ft_hexlen(unsigned int num)
 	return (i);
 }
 
-static int	ft_putx(unsigned int num, const char fmt)
+static void	ft_putx(unsigned int num, const char fmt)
 {
 	if (num >= 16)
 	{
@@ -49,8 +49,11 @@ static int	ft_putx(unsigned int num, const char fmt)
 int	ft_printf_x(unsigned int num, const char fmt)
 {
 	if (num == 0)
-		return ft_putchar_fd('0', 1);
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
 	else
-		ft_putx(num);
+		ft_putx(num, fmt);
 	return (ft_hexlen(num));
 }

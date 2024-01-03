@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pritnf.h"
+#include "ft_printf.h"
 
 static int	ft_ptrlen(unsigned long long p)
 {
@@ -46,10 +46,11 @@ int	ft_printf_p(unsigned long long p)
 	int	p_out;
 
 	p_out = 0;
-	p_out += ft_putstr_fd("0x'", 1);
+	p_out += write(1, "0x'", 2);
 	if (p == 0)
 	{
-		return (ft_putchar_fd('0', 1));
+		ft_putchar_fd('0', 1);
+		return (3);
 	}
 	else
 	{
